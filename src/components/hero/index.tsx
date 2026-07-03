@@ -7,7 +7,7 @@ import { ChevronRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section>
+    <section id="topo">
       {/* Breadcrumb strip */}
       <div className="bg-white text-neutral-500">
         <nav
