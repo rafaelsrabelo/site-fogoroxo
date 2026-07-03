@@ -19,7 +19,7 @@ export function HowToTake() {
             Simples de encaixar na sua rotina
           </h2>
           <p className="mt-4 text-muted-foreground text-pretty">
-            Ajuste a dose conforme o seu dia. Ingira sempre com água e respeite a
+            Ajuste a dose conforme o seu dia. Tome sempre com água e respeite a
             recomendação diária.
           </p>
         </FadeIn>
@@ -46,7 +46,7 @@ export function HowToTake() {
         <FadeIn delay={0.12}>
           <p className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
             <Droplet className="size-4 shrink-0 text-fogo-purple-light" />
-            Recomendação: ingerir com água e não exceder a dose diária indicada.
+            Recomendação: tome com água e não exceder a dose diária indicada.
           </p>
         </FadeIn>
       </div>

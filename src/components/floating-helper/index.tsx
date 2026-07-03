@@ -13,7 +13,7 @@ import { X, Send, Flame, ShoppingBag, HelpCircle, Truck } from "lucide-react";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 // Curved label repeated around the ring. Spacing tuned to fill the circle.
-const RING_LABEL = "O TERMO DA ATUALIDADE  •  O TERMO DA ATUALIDADE  •  ";
+const RING_LABEL = "O TERMO DA ATUALIDADE  •";
 
 const QUICK_REPLIES = [
   { icon: ShoppingBag, label: "Quero comprar", message: "Olá! Quero comprar o Fogo Roxo 👾" },
@@ -55,7 +55,7 @@ export function FloatingHelper() {
   return (
     <div
       ref={containerRef}
-      className="fixed bottom-5 right-5 z-[80] flex flex-col items-end gap-3"
+      className="pointer-events-none fixed bottom-5 right-5 z-[80] flex flex-col items-end gap-3"
     >
       {/* Chat card */}
       <div
@@ -150,7 +150,7 @@ export function FloatingHelper() {
         onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
         aria-label="Abrir chat de ajuda — O termo da atualidade"
-        className="group relative grid size-24 shrink-0 place-items-center rounded-full bg-white shadow-[0_10px_30px_-6px_rgba(0,0,0,0.45)] transition-transform duration-200 hover:scale-105 sm:size-28"
+        className="group pointer-events-auto relative grid size-24 shrink-0 place-items-center rounded-full bg-white shadow-[0_10px_30px_-6px_rgba(0,0,0,0.45)] transition-transform duration-200 hover:scale-105 sm:size-28"
       >
         {/* Rotating ring text */}
         <svg
@@ -165,8 +165,15 @@ export function FloatingHelper() {
               fill="none"
             />
           </defs>
-          <text className="fill-fogo-purple text-[9.5px] font-bold uppercase tracking-[0.18em]">
-            <textPath href="#helper-ring" startOffset="0">
+          <text className="fill-fogo-purple text-[10px] font-bold uppercase">
+            {/* textLength = circle circumference (2·π·46) so the single phrase
+                spans the whole ring exactly, without repeating or being cut. */}
+            <textPath
+              href="#helper-ring"
+              startOffset="0"
+              textLength="289"
+              lengthAdjust="spacing"
+            >
               {RING_LABEL}
             </textPath>
           </text>

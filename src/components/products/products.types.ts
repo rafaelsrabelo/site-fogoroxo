@@ -13,20 +13,16 @@ export interface Product {
   price: number;
   /** Optional strike-through original price to signal a discount. */
   originalPrice?: number;
-  /** Small tag above the card, e.g. "Pronta entrega". */
-  tag?: string;
   /** Highlight badge, e.g. "Mais vendido" or "Melhor custo-benefício". */
   badge?: string;
   /** Highlights the card as the primary recommendation. */
   featured?: boolean;
-  /** Optional free gift / highlight, e.g. "+ coqueteleira de brinde". */
-  gift?: string;
-  /** Number of bottles included (omitted for the free sample). */
+  /** Number of bottles included. */
   bottles?: number;
-  /** Placeholder image descriptor (label + intended path). */
+  /** Full promo artwork: alt label + path under public/images/products. */
   image: {
     label: string;
-    path?: string;
+    path: string;
   };
   /** Optional fine-print note, e.g. purchase limits. */
   note?: string;

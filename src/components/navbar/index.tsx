@@ -41,7 +41,7 @@ export function Navbar() {
               {item}
             </li>
           ))}
-          <li className="sm:hidden">🔥 O melhor termogênico da atualidade</li>
+          <li className="sm:hidden">👾 O melhor termogênico da atualidade</li>
         </ul>
       </div>
 
